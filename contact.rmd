@@ -1,0 +1,18 @@
+---
+title: "Contact"
+# author: "Chrissy"
+# date: "4/21/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# don't show code unless we explicitly set echo = TRUE
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+Please reach out, I'd love to chat!
+
+Dr. Christina M. Hernández  
+cmh352[at]cornell.edu
+
+You can call me "Chrissy," and my pronouns are she/her. 

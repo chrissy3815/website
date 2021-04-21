@@ -9,19 +9,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Christina Hernandez" />
 
 
-<title>About</title>
+<title>Research</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
@@ -113,33 +115,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 51px;
+  padding-top: 52px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 57px;
+  margin-top: -57px;
 }
 .section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 57px;
+  margin-top: -57px;
 }
 .section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 57px;
+  margin-top: -57px;
 }
 .section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 57px;
+  margin-top: -57px;
 }
 .section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 57px;
+  margin-top: -57px;
 }
 .section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 57px;
+  margin-top: -57px;
 }
 .dropdown-submenu {
   position: relative;
@@ -259,6 +261,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -266,6 +331,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -309,21 +384,19 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About</h1>
-<h4 class="author">Christina Hernandez</h4>
-<h4 class="date">4/21/2021</h4>
+<h1 class="title toc-ignore">Research</h1>
 
 </div>
 
 
-<div id="postdoctoral-associate-cornell-university" class="section level2">
-<h2>Postdoctoral Associate, Cornell University</h2>
-<p>I am an ecologist interested in life history evolution. In particular, I study how observed population dynamics are influenced by reproductive traits and early life history events. In my doctoral thesis work, I focused on the distribution, growth, and transport/dispersal of larval fishes. My thesis included chapters about <a href="https://www.nature.com/articles/s41598-019-47161-0">tropical tuna spawning</a> in the Phoenix Islands Protected Area (central tropical Pacific), <a href="https://www.whoi.edu/oceanus/feature/the-secret-tuna-nursery/">Atlantic bluefin tuna spawning</a> in the Slope Sea, and a trait-based approach to studying coral reef fish dispersal. I also worked on the evolutionary demography of <a href="https://www.pnas.org/content/117/28/16431">maternal effect senescence</a>, a particular class of maternal effects that we studied using data from a novel model organism.</p>
-<p>I am currently a postdoctoral associate at Cornell University in the department of Ecology and Evolutionary Biology. I am working on two meta-analyses using the <a href="https://compadre-db.org/">compadre and comadre</a> databases, which archive published matrix population models from plants and animals, respectively. I am analyzing matrices from these databases using new tools from the fANOVA class of analyses— in essence, these new methods are exact versions of existing approximation tools for analyzing sensitivity and decomposing variance in population dynamics and individual life history outcomes. My postdoctoral work is in collaboration with and supervised by <a href="http://www.eeb.cornell.edu/Ellner/">Steve Ellner</a> (Cornell), <a href="http://faculty.bscb.cornell.edu/~hooker/">Giles Hooker</a> (Cornell), <a href="https://case.edu/artsci/biol/snyder/snyder.html">Robin Snyder</a> (Case Western Reserve), and <a href="https://qcnr.usu.edu/labs/adler_lab/index">Peter Adler</a> (Utah State).</p>
+<div id="more-information-coming-soon" class="section level1">
+<h1>More information coming soon!</h1>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -356,6 +429,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
