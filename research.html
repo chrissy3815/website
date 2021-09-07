@@ -13,12 +13,22 @@
 
 <title>Research</title>
 
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/spacelab.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
@@ -36,11 +46,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -53,32 +58,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 
@@ -89,10 +68,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -109,40 +84,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 52px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 57px;
-  margin-top: -57px;
-}
-.section h2 {
-  padding-top: 57px;
-  margin-top: -57px;
-}
-.section h3 {
-  padding-top: 57px;
-  margin-top: -57px;
-}
-.section h4 {
-  padding-top: 57px;
-  margin-top: -57px;
-}
-.section h5 {
-  padding-top: 57px;
-  margin-top: -57px;
-}
-.section h6 {
-  padding-top: 57px;
-  margin-top: -57px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -170,7 +118,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -182,7 +130,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -193,10 +141,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -208,7 +169,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -334,7 +294,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -353,7 +313,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Your name</a>
+      <a class="navbar-brand" href="index.html">Christina M. Hernandez</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -364,10 +324,7 @@ div.tocify {
   <a href="research.html">Research</a>
 </li>
 <li>
-  <a href="cv.html">CV</a>
-</li>
-<li>
-  <a href="photos.html">Photos</a>
+  <a href="HernandezSept7_2021.pdf">CV</a>
 </li>
 <li>
   <a href="contact.html">Contact</a>
@@ -380,7 +337,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -389,8 +346,65 @@ div.tocify {
 </div>
 
 
-<div id="more-information-coming-soon" class="section level1">
-<h1>More information coming soon!</h1>
+<p>My research covers a range of topics related to reproductive and early life history stages, and ranging from field- and laboratory-based investigations to mathematical ecology and biological-physical marine dispersal simulations. Many of these threads have implications for harvested or otherwise managed populations. Please read on for more detailed descriptions of a few major areas of my research.</p>
+<div id="tuna-larvae" class="section level1">
+<h1><strong>Tuna larvae</strong></h1>
+<p>Tuna are fascinating creatures: the adults are highly migratory and have evolved a number of features for optimized swimming, hunting, and thermal regulation. For example, when they want to do fast burst swimming (for example during hunting), they can fold their dorsal fin down into a slot in the top of their body.</p>
+<p>Their larvae hatch at just 2-3 mm in length, and grow rapidly. By about 1-2 weeks of age, these larvae are hunting down other fish larvae with their big eyes and big mouths. <img src="photos/Chrissy_bluefinTunaLarva.jpeg" alt="Bluefin tuna larvae, photographed on the tip of Chrissy’s finger." /></p>
+<p>Tuna are important as a source of food and they are prized by sport fishers. Like many species of fish, tuna exhibit high adult fecundity and high mortality in the early life stages. This means that small changes in early life growth and survival can have big impacts on the population dynamics and, by extension, on our decisions about how many fish to catch each year.</p>
+<div id="phoenix-islands-protected-area" class="section level2">
+<h2>Phoenix Islands Protected Area</h2>
+<p>In addition to the important role that early life stages play in driving population dynamics, studying larvae can be an important way to gain insight into adult presence and spawning behavior in places where the adults cannot be studied. For example, in the Phoenix Islands Protected Area (PIPA), in the Republic of Kiribati, there is no commercial fishing allowed.</p>
+<p>I was part of a project where we established a monitoring program of tuna larvae (skipjack, yellowfin, and bigeye) in PIPA. I analyzed larval tuna distribution as well as age and growth, finding no difference in growth between an El Niño year (2015) and a neutral year (2016). I also used particle backtracking simulations to demonstrate that spawning is occurring by tropical tunas both inside and to the northeast of PIPA.</p>
+<div class="figure">
+<img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41598-019-47161-0/MediaObjects/41598_2019_47161_Fig5_HTML.png" alt="" />
+<p class="caption">Relative spawning output, from backtracking simulations, is shown for <em>Katsuwonus pelamis</em> (panels a–c) and <em>Thunnus spp.</em> (panels d–f). Panels a and d show the relative spawning output in 2015, panels b and e for 2016, and panels c and f for 2017.</p>
+</div>
+<p>Because of the huge contribution of tuna fishing to the economy of Kiribati, it is important to know if the protected area might also be protecting tunas. As our time series grows over the next few years, we hope to be able to ask questions about the influence of PIPA on spawning adults and larval tunas.</p>
+<p>This paper is <a href="https://www.nature.com/articles/s41598-019-47161-0">available open-access.</a></p>
+</div>
+<div id="atlantic-bluefin-tuna" class="section level2">
+<h2>Atlantic bluefin tuna</h2>
+<p>Traditionally, it has been understood that Atlantic bluefin tuna exhibit strong natal homing, and that they reproduce in two locations: the Gulf of Mexico and the Mediterranean Sea. However, it has long been speculated that another spawning area might exist in the Western Atlantic, north of the Gulf of Mexico. In 2013, 67 bluefin larvae were collected in a region off the US East Coast known as the Slope Sea - it is the wedge of ocean extending from Cape Hatteras to the northeast, as the Gulf Stream peels away from the shelf break. These larval collections prompted debates over whether the area should be considered a “third” spawning ground.</p>
+<div class="figure">
+<img src="https://www.pnas.org/content/113/12/3299/F1.large.jpg" style="width:50.0%" alt="" />
+<p class="caption">Figure from Richardson et al. 2016 in PNAS</p>
+</div>
+<p>I set out to investigate whether the Slope Sea represented suitable larval habitat. Using samples collected by NOAA scientists in 2016, I found that larval growth rates did not differ between the Slope Sea and the Gulf of Mexico that year, and that in fact Slope Sea larvae were slightly larger than Gulf of Mexico larvae at the time of hatching. I also demonstrated, using both backward and forward tracking simulations, that the larvae were spawned in the Slope Sea, and that they would be retained in the region until 25 days old, when they become capable of directed swimming. This work demonstrates that, at least in 2016, the Slope Sea was providing suitable larval habitat. Additional simulation work carried out in collaboration with physical ocenaographer Irina Rypina has shown that the Slope Sea provided ample suitable habitat for spawning and larval growth throughout the summer, at least over the past 10 years.</p>
+</div>
+</div>
+<div id="matrix-population-models" class="section level1">
+<h1><strong>Matrix population models</strong></h1>
+<p>Matrix population models are widely used by ecologists, for species ranging from viruses to trees to whales. This type of model takes the population numbers, structured by size or age, and calculates the population numbers at the next time step.</p>
+<p><span class="math display">\[\begin{equation}
+\mathbf{n}_{t+1} = \mathbf{A}*\mathbf{n}_t
+\end{equation}\]</span></p>
+<p>The matrix itself, for example, could look like: <span class="math display">\[\begin{equation}
+\mathbf{A}_1 = 
+\begin{bmatrix}
+f_1       &amp; f_2    &amp; f_3 \\
+s_1       &amp; 0      &amp; 0 \\ 
+0         &amp; s_2    &amp; s_3 \\
+\end{bmatrix}
+\end{equation}\]</span> This example might apply to an age-classified population where individuals of age 3 and older are indistinguishable. The first row contains the fertility rate of each age class, and the sub-diagonal contains the survival rate.</p>
+<p>From these matrix models, we can estimate the stable population size and structure, the population growth rate, and a whole host of other individual- or population-level metrics. These models are built from demographic data from different populations, time spans, or experimental treatments. A common question to ask is how the population growth rate varies amongst multiple models for the same species, and how that variation depends on the changes in the entries of the matrix (the vital rates: survival, growth, and fecundity). In this way, we are decomposing the change in population growth rate into the contributions from each of the vital rates.</p>
+<p>My work builds on the long-standing approximation method for this decomposition, called a Life Table Response Experiment (LTRE), to generate an exact version of LTRE, which can take into account not only the first-order effects of the vital rates, but also the effects of interactions amongst the vital rates. This exact method, which I will soon make available as an R package, can be used to more precisely study the population dynamics of any species. To demonstrate the utility of this tool, I am performing a meta-analysis of matrix population models from two publicly available databases to demonstrate the impact of the exact method, as well as to investigate patterns in the dependence of population dynamics on the vital rates, and how these patterns interact with life histories (e.g., the fast-slow continuum).</p>
+</div>
+<div id="maternal-effects-in-rotifers" class="section level1">
+<h1><strong>Maternal effects in rotifers</strong></h1>
+<p>For many species, there is significant variation in individual fitness that can be attributed to maternal effects. Early life survival is strongly influenced by maternal provisioning (e.g., egg mass), particularly for species without post-natal care. Maternal health, body condition, and stress can lead to differences in survival or even phenotypic changes in the offspring. In rotifers, we observe a decline in the survival and fertility of offspring with increasing age of their mothers, a phenomenon known as maternal effect senescence. This is observed even in clonal populations, with no post-natal care, and no evidence of changes in maternal provisioning.</p>
+<p>I have a productive collaboration studying maternal effects in rotifers with matrix population models. Using individual life history data from a laboratory population of rotifers, I found that maternal effect senescence was expressed mostly as decreased fertility, and that it can arise through decreasing selection gradients with age. This paper is <a href="https://www.pnas.org/content/117/28/16431">available open-access.</a></p>
+<p>I have also collaborated on a project investigating how maternal age influences lifetime reproductive output and have an ongoing collaboration looking at how these observed maternal effects respond to caloric restriction treatments.</p>
+</div>
+<div id="larval-dispersal" class="section level1">
+<h1><strong>Larval dispersal</strong></h1>
+<p>Dispersal is a crucial life history event that influences the dynamics of local and meta-populations as well as invasion and evolutionary processes. While organisms in terrestrial systems often exhibit adaptations to increase their dispersal, aquatic and marine systems tend to be highly dispersive and adaptations are expected to arise to restrict transport in ocean currents. Two major traits related to dispersal in fish larvae are the pelagic larval duration and the vertical positioning of individuals. Pelagic larval duration sets the scope of maximum dispersal distance based on transport in ocean currents, and vertical positioning is important because wind-driven ocean currents decay with depth. In particular, it has been shown in some locations that a downward shift as larvae grow (a phenomenon termed ontogenetic vertical migration or OVM) can constrain dispersal and help larvae get back to shore.</p>
+<div class="figure">
+<img src="https://www.omao.noaa.gov/sites/default/files/styles/960_wide/public/media/MOCNESS%20Net.jpg?itok=S54NWktG" alt="" />
+<p class="caption">Sketch of a MOCNESS net system, designed to take depth-stratified plankton samples. The survey data used in this study were collected with a modified MOCNESS.</p>
+</div>
+<p>Using data from two years of monthly surveys across the Straits of Florida, I analyzed the vertical distributions of 23 taxa of coral reef fish larvae, finding behaviors that fit into several broad categories: surface-associated taxa, taxa that exhibit OVM, and messier patterns. These messier patterns include broadening depth preference with age, a complete lack of depth preference, and a shift towards shallower waters with age.</p>
+<p>In larval simulations inspired by these vertical patterns, I found that a species exhibiting an even distribution across the water column experiences similar dispersal as a species exhibiting OVM. Both of these behaviors, even distribution and OVM, had more constrained dispersal and less connectivity in general across the Caribbean region. However, these patterns were more complex on regional and local scales, where the influence of local hydrography and habitat availability helped determine the dispersal and connectivity.</p>
 </div>
 
 
@@ -422,7 +436,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -431,6 +445,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
