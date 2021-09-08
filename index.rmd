@@ -8,9 +8,9 @@ output:
 ```{r setup, include=FALSE}
 # don't show code unless we explicitly set echo = TRUE
 knitr::opts_chunk$set(echo = FALSE)
-
+require(here)
 ```
-![](/Users/cmh352/ProfessionalDevelopment/website/photos/headshot_2018.jpeg){width=25%}
+![](photos/headshot_2018.jpeg){width=25%}
 
 ## Postdoctoral Associate, Cornell University
 
