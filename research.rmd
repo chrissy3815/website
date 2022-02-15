@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 # don't show code unless we explicitly set echo = TRUE
 knitr::opts_chunk$set(echo = FALSE)
-
+require(here)
 ```
 
 My research covers a range of topics related to reproductive and early life history stages, and ranging from field- and laboratory-based investigations to mathematical ecology and biological-physical marine dispersal simulations. Many of these threads have implications for harvested or otherwise managed populations. Please read on for more detailed descriptions of a few major areas of my research.
@@ -17,7 +17,7 @@ My research covers a range of topics related to reproductive and early life hist
 Tuna are fascinating creatures: the adults are highly migratory and have evolved a number of features for optimized swimming, hunting, and thermal regulation. For example, when they want to do fast burst swimming (for example during hunting), they can fold their dorsal fin down into a slot in the top of their body.
 
 Their larvae hatch at just 2-3 mm in length, and grow rapidly. By about 1-2 weeks of age, these larvae are hunting down other fish larvae with their big eyes and big mouths.
-![Bluefin tuna larvae, photographed on the tip of Chrissy's finger.](/Users/cmh352/ProfessionalDevelopment/website/photos/Chrissy_bluefinTunaLarva.jpeg)
+![Bluefin tuna larvae, photographed on the tip of Chrissy's finger.](photos/Chrissy_bluefinTunaLarva.jpeg)
 
 Tuna are important as a source of food and they are prized by sport fishers. Like many species of fish, tuna exhibit high adult fecundity and high mortality in the early life stages. This means that small changes in early life growth and survival can have big impacts on the population dynamics and, by extension, on our decisions about how many fish to catch each year.
 
