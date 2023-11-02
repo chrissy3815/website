@@ -36,9 +36,10 @@ This paper is [available open-access.](https://www.nature.com/articles/s41598-01
 ## Atlantic bluefin tuna
 Traditionally, it has been understood that Atlantic bluefin tuna exhibit strong natal homing, and that they reproduce in two locations: the Gulf of Mexico and the Mediterranean Sea. However, it has long been speculated that another spawning area might exist in the Western Atlantic, north of the Gulf of Mexico. In 2013, 67 bluefin larvae were collected in a region off the US East Coast known as the Slope Sea - it is the wedge of ocean extending from Cape Hatteras to the northeast, as the Gulf Stream peels away from the shelf break. These larval collections prompted debates over whether the area should be considered a "third" spawning ground.
 
-![Figure from Richardson et al. 2016 in PNAS](https://www.pnas.org/content/113/12/3299/F1.large.jpg){width=50%}
+![Figure from Richardson et al. 2016 in PNAS](https://www.pnas.org/cms/10.1073/pnas.1525636113/asset/fb4cd88d-d73e-4d45-8209-9c8a5171c919/assets/graphic/pnas.1525636113fig01.jpeg){width=50%}
 
 I set out to investigate whether the Slope Sea represented suitable larval habitat. Using samples collected by NOAA scientists in 2016, I found that larval growth rates did not differ between the Slope Sea and the Gulf of Mexico that year, and that in fact Slope Sea larvae were slightly larger than Gulf of Mexico larvae at the time of hatching. I also demonstrated, using both backward and forward tracking simulations, that the larvae were spawned in the Slope Sea, and that they would be retained in the region until 25 days old, when they become capable of directed swimming. This work demonstrates that, at least in 2016, the Slope Sea was providing suitable larval habitat. Additional simulation work carried out in collaboration with physical ocenaographer Irina Rypina has shown that the Slope Sea provided ample suitable habitat for spawning and larval growth throughout the summer, at least over the past 10 years.
+
 
 # **Matrix population models**
 Matrix population models are widely used by ecologists, for species ranging from viruses to trees to whales. This type of model takes the population numbers, structured by size or age, and calculates the population numbers at the next time step.

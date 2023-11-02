@@ -13,6 +13,6 @@ knitr::opts_chunk$set(echo = FALSE)
 Please reach out, I'd love to chat!
 
 Dr. Christina M. Hernández  
-cmh352[at]cornell.edu
+chrissy.hernandez[at]biology.ox.ac.uk
 
 You can call me "Chrissy," and my pronouns are she/her. 
