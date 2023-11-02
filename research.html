@@ -353,6 +353,193 @@ investigations to mathematical ecology and biological-physical marine
 dispersal simulations. Many of these threads have implications for
 harvested or otherwise managed populations. Please read on for more
 detailed descriptions of a few major areas of my research.</p>
+<div id="population-dynamics" class="section level1">
+<h1><strong>Population Dynamics</strong></h1>
+<p><br></p>
+<div id="background-structured-population-models"
+class="section level2">
+<h2>Background: Structured population models</h2>
+<p>Structured population models are widely used by ecologists, for
+species ranging from viruses to trees to whales. These models work in
+<em>discrete time</em> and are primarily <em>linear models</em>, meaning
+that the models are fit to census data collected at fixed intervals, and
+that they assume the population is in a constant environment. Structured
+population models can be <strong>matrix population models</strong>
+(MPMs) or <strong>integral projection models</strong> (IPMs). MPMs
+utilize discrete ages, stages, or size bins to structure the population,
+while IPMs are structured by a continuous variable, most often size.
+IPMs often work well when there is an expected smooth functional
+relationship between size and survival or fertility, and can be powerful
+for smaller datasets. Although they are built using different methods,
+the resulting MPM or IPM can generally be analyzed using a lot of the
+same techniques.</p>
+<p>The MPM or IPM can be used to project the population forwards in
+time:</p>
+<p>The population at time <span class="math inline">\(t\)</span> is
+expressed as the number or density of individuals in each of the size,
+age, or stage classes, arranged into a vector <span
+class="math inline">\(\mathbf{n}_t\)</span>. This can be multiplied by
+the projection matrix <span class="math inline">\(\mathbf{A}\)</span> to
+yield the population vector at the next time, <span
+class="math inline">\(t+1\)</span>:</p>
+<p><span class="math display">\[\begin{equation}
+\mathbf{n}_{t+1} = \mathbf{A}*\mathbf{n}_t
+\end{equation}\]</span></p>
+<p>The matrix itself, for example, could look like: <span
+class="math display">\[\begin{equation}
+\mathbf{A}_1 =
+\begin{bmatrix}
+f_1       &amp; f_2    &amp; f_3 \\
+s_1       &amp; 0      &amp; 0 \\
+0         &amp; s_2    &amp; s_3 \\
+\end{bmatrix}
+\end{equation}\]</span> This example might apply to an age-classified
+population where individuals of age 3 and older are indistinguishable.
+The first row contains the fertility rate of each age class, and the
+sub-diagonal contains the survival rate.</p>
+<p>From these matrix models, we can estimate the stable population size
+and structure, the population growth rate, and a whole host of other
+individual- or population-level metrics. These models are built from
+demographic data from different populations, time spans, or experimental
+treatments.</p>
+<p><br></p>
+</div>
+<div id="life-table-response-experiments" class="section level2">
+<h2>Life Table Response Experiments</h2>
+<p>A common question to ask is how the population growth rate varies
+amongst multiple models for the same species, and how that variation
+depends on the changes in the entries of the matrix (the vital rates:
+survival, growth, and fecundity). In this way, we are decomposing the
+change in population growth rate into the contributions from each of the
+vital rates.</p>
+<p>I built on the long-standing approximation method for this
+decomposition, called a Life Table Response Experiment (LTRE), to
+generate an <a
+href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14065">exact
+version of LTRE</a>, which can take into account not only the
+first-order effects of the vital rates, but also the effects of
+interactions amongst the vital rates. This exact method, which is
+available as an <a
+href="https://cran.r-project.org/web/packages/exactLTRE/index.html">R
+package</a>, can be used to more precisely study the population dynamics
+of any species. To learn more about this work, you can watch this <a
+href="https://www.youtube.com/watch?v=PEjqJHotUTM&amp;list=PL4ADF7CAA34DD8E4D&amp;index=72&amp;ab_channel=MethodsEcolEvol">webinar
+on the package</a>.</p>
+<p>To demonstrate the utility of this tool, I am performing a
+comparative study of matrix population models from two publicly
+available databases. In this study, I am investigating patterns in the
+dependence of population dynamics on changes in the survival
+vs. fertility rates, and whether these patterns interact with life
+histories (e.g., the fast-slow continuum).</p>
+<p><br></p>
+</div>
+<div id="population-resilience" class="section level2">
+<h2>Population Resilience</h2>
+<p>My newest project, funded by NERC’s Pushing the Frontiers program,
+seeks to expand the existing framework for analysis of population
+resilience to (1) more realistic disturbance regimes; (2) models with
+density-dependent population regulation; and (3) across hierarchical
+levels, <em>i.e.</em>, from individuals to populations to
+communities.</p>
+<p><img src="photos/Resilience_metrics.png" style="width:75.0%"
+alt="Existing framework for analyzing population resilience, from Capdevila et al. 2022 (Ecology Letters)" />
+<br> This existing framework assumes that the disturbance takes the form
+of a single ‘pulse’: essentially a one-time change to the population
+structure, that then decays away with time. However, real populations
+will be exposed to a variety of disturbances with different return
+times, or to ‘press’ disturbances that cause a permanent change in a
+given vital rate. I will be involved in developing and implementing
+novel mathematical approaches to combine concepts of stochastic
+environments with the transient dynamics analyses that underpin the
+existing resilience framework (<a
+href="https://doi.org/10.1111/ele.14004">Capdevila et al. 2022</a>).</p>
+<p><br> I will also be examining how the existing framework can be
+applied to non-linear population models, specifically models that
+incorporate density dependence. The standard structured population
+models assume that the parameters of the model– the vital rates
+describing survival, growth, and reproduction– are constant even when
+population size changes. However, real populations can exhibit a variety
+of different relationships between their vital rates and population
+density, and these density-dependent effects can vary in their
+stage-specificity as well.</p>
+<div class="float">
+<img src="photos/density_dependence_plot.png" style="width:50.0%"
+alt="Figure showing examples of potential functional responses of vital rates to population density." />
+<div class="figcaption">Figure showing examples of potential functional
+responses of vital rates to population density.</div>
+</div>
+<p><br> Finally, I will work on extending our framework for analyzing
+demographic resilience within populations to analyzing the resilience of
+multi-species communities. More on this as the project progresses!</p>
+<p><br></p>
+</div>
+<div id="luck-in-life-histories" class="section level2">
+<h2>Luck in life histories</h2>
+<p>In structured population models, all individuals that share the same
+state (age, class, size) also share the same probabilities of surviving,
+growing, shrinking, and reproducing. From the perspective of the model,
+they are identical. However, if we use that model to simulate a series
+of individuals, they will follow wildly different life courses: some
+will die in the first time step, some will live long enough to reproduce
+once, and a small percentage will survive a long time and produce many
+offspring.</p>
+<p>The study of luck or ‘individual stochasticity’ in demographic models
+is motivated by the frequent observation of high levels of reproductive
+skew in populations: a small number of adults contribute the majority of
+the offspring (and, therefore, population growth).</p>
+<p>I have examined the role of ‘luck’ in life histories across the wide
+variety of plant and animal population models available through the <a
+href="compadre-db.org">COM(P)ADRE databases</a>. I have found that, when
+no other phenotypic variation is represented in the models, that
+variance in lifespan and variance in lifetime reproductive output (LRO)
+are positively related. That is, populations with a lot of variation in
+lifespan (either because the population has a long mean lifespan, or
+because of high mortality in early life followed by low mortality)
+<em>also</em> show a lot of variation in LRO. However, skewness in
+lifetime reproductive output was negatively correlated to variance in
+LRO. As variance in LRO increases, the distribution becomes wider but
+less skewed. Finally, we found positive relationships between variance
+in LRO and both longevity and population growth rate. High variance in
+LRO may expose populations to harmful genetic drift, and we would expect
+that to be an issue in recovering populations of long-lived iteroparous
+species.</p>
+<p>The manuscript on this work is in revision as of October 2023.</p>
+<p><br></p>
+</div>
+</div>
+<div id="maternal-effects-in-rotifers" class="section level1">
+<h1><strong>Maternal effects in rotifers</strong></h1>
+<div class="float">
+<img src="photos/Jackson%20for%20Rotifer%20Project.jpeg"
+style="width:30.0%"
+alt="Artwork inspired by our research, completed by a Falmouth high school student, Kaylee Jackson in 2021." />
+<div class="figcaption">Artwork inspired by our research, completed by a
+Falmouth high school student, Kaylee Jackson in 2021.</div>
+</div>
+<p><br> For many species, there is significant variation in individual
+fitness that can be attributed to maternal effects. Early life survival
+is strongly influenced by maternal provisioning (e.g., egg mass),
+particularly for species without post-natal care. Maternal health, body
+condition, and stress can lead to differences in survival or even
+phenotypic changes in the offspring. In rotifers, we observe a decline
+in the survival and fertility of offspring with increasing age of their
+mothers, a phenomenon known as maternal effect senescence. This is
+observed even in clonal populations, with no post-natal care, and no
+evidence of changes in maternal provisioning.</p>
+<p>I have a productive collaboration studying maternal effects in
+rotifers with matrix population models. Using individual life history
+data from a laboratory population of rotifers, I found that maternal
+effect senescence was expressed mostly as decreased fertility, and that
+it can arise through decreasing selection gradients with age. This paper
+is <a href="https://www.pnas.org/content/117/28/16431">available
+open-access.</a></p>
+<p>I have also collaborated on a project investigating how <a
+href="https://www.journals.uchicago.edu/doi/full/10.1086/718716">maternal
+age influences lifetime reproductive output</a> and have an ongoing
+collaboration looking at how these observed maternal effects respond to
+caloric restriction treatments.</p>
+<p><br></p>
+</div>
 <div id="tuna-larvae" class="section level1">
 <h1><strong>Tuna larvae</strong></h1>
 <p>Tuna are fascinating creatures: the adults are highly migratory and
@@ -362,15 +549,20 @@ swimming (for example during hunting), they can fold their dorsal fin
 down into a slot in the top of their body.</p>
 <p>Their larvae hatch at just 2-3 mm in length, and grow rapidly. By
 about 1-2 weeks of age, these larvae are hunting down other fish larvae
-with their big eyes and big mouths. <img
-src="photos/Chrissy_bluefinTunaLarva.jpeg"
-alt="Bluefin tuna larvae, photographed on the tip of Chrissy’s finger." /></p>
-<p>Tuna are important as a source of food and they are prized by sport
-fishers. Like many species of fish, tuna exhibit high adult fecundity
-and high mortality in the early life stages. This means that small
-changes in early life growth and survival can have big impacts on the
-population dynamics and, by extension, on our decisions about how many
-fish to catch each year.</p>
+with their big eyes and big mouths.</p>
+<div class="float">
+<img src="photos/Chrissy_bluefinTunaLarva.jpeg" style="width:50.0%"
+alt="Bluefin tuna larvae, photographed on the tip of Chrissy’s finger." />
+<div class="figcaption">Bluefin tuna larvae, photographed on the tip of
+Chrissy’s finger.</div>
+</div>
+<p><br> Tuna are important as a source of food and they are prized by
+sport fishers. Like many species of fish, tuna exhibit high adult
+fecundity and high mortality in the early life stages. This means that
+small changes in early life growth and survival can have big impacts on
+the population dynamics and, by extension, on our decisions about how
+many fish to catch each year.</p>
+<p><br></p>
 <div id="phoenix-islands-protected-area" class="section level2">
 <h2>Phoenix Islands Protected Area</h2>
 <p>In addition to the important role that early life stages play in
@@ -396,14 +588,15 @@ simulations, is shown for <em>Katsuwonus pelamis</em> (panels a–c) and
 spawning output in 2015, panels b and e for 2016, and panels c and f for
 2017.</div>
 </div>
-<p>Because of the huge contribution of tuna fishing to the economy of
-Kiribati, it is important to know if the protected area might also be
+<p><br> Because of the huge contribution of tuna fishing to the economy
+of Kiribati, it is important to know if the protected area might also be
 protecting tunas. As our time series grows over the next few years, we
 hope to be able to ask questions about the influence of PIPA on spawning
 adults and larval tunas.</p>
 <p>This paper is <a
 href="https://www.nature.com/articles/s41598-019-47161-0">available
 open-access.</a></p>
+<p><br></p>
 </div>
 <div id="atlantic-bluefin-tuna" class="section level2">
 <h2>Atlantic bluefin tuna</h2>
@@ -423,89 +616,22 @@ src="https://www.pnas.org/cms/10.1073/pnas.1525636113/asset/fb4cd88d-d73e-4d45-8
 style="width:50.0%" alt="Figure from Richardson et al. 2016 in PNAS" />
 <div class="figcaption">Figure from Richardson et al. 2016 in PNAS</div>
 </div>
-<p>I set out to investigate whether the Slope Sea represented suitable
-larval habitat. Using samples collected by NOAA scientists in 2016, I
-found that larval growth rates did not differ between the Slope Sea and
-the Gulf of Mexico that year, and that in fact Slope Sea larvae were
-slightly larger than Gulf of Mexico larvae at the time of hatching. I
-also demonstrated, using both backward and forward tracking simulations,
-that the larvae were spawned in the Slope Sea, and that they would be
-retained in the region until 25 days old, when they become capable of
-directed swimming. This work demonstrates that, at least in 2016, the
-Slope Sea was providing suitable larval habitat. Additional simulation
-work carried out in collaboration with physical ocenaographer Irina
-Rypina has shown that the Slope Sea provided ample suitable habitat for
-spawning and larval growth throughout the summer, at least over the past
-10 years.</p>
+<p><br> I set out to investigate whether the Slope Sea represented
+suitable larval habitat. Using samples collected by NOAA scientists in
+2016, I found that larval growth rates did not differ between the Slope
+Sea and the Gulf of Mexico that year, and that in fact Slope Sea larvae
+were slightly larger than Gulf of Mexico larvae at the time of hatching.
+I also demonstrated, using both backward and forward tracking
+simulations, that the larvae were spawned in the Slope Sea, and that
+they would be retained in the region until 25 days old, when they become
+capable of directed swimming. This work demonstrates that, at least in
+2016, the Slope Sea was providing suitable larval habitat. Additional
+simulation work carried out in collaboration with physical ocenaographer
+Irina Rypina has shown that the Slope Sea provided ample suitable
+habitat for spawning and larval growth throughout the summer, at least
+over the past 10 years.</p>
+<p><br></p>
 </div>
-</div>
-<div id="matrix-population-models" class="section level1">
-<h1><strong>Matrix population models</strong></h1>
-<p>Matrix population models are widely used by ecologists, for species
-ranging from viruses to trees to whales. This type of model takes the
-population numbers, structured by size or age, and calculates the
-population numbers at the next time step.</p>
-<p><span class="math display">\[\begin{equation}
-\mathbf{n}_{t+1} = \mathbf{A}*\mathbf{n}_t
-\end{equation}\]</span></p>
-<p>The matrix itself, for example, could look like: <span
-class="math display">\[\begin{equation}
-\mathbf{A}_1 =
-\begin{bmatrix}
-f_1       &amp; f_2    &amp; f_3 \\
-s_1       &amp; 0      &amp; 0 \\
-0         &amp; s_2    &amp; s_3 \\
-\end{bmatrix}
-\end{equation}\]</span> This example might apply to an age-classified
-population where individuals of age 3 and older are indistinguishable.
-The first row contains the fertility rate of each age class, and the
-sub-diagonal contains the survival rate.</p>
-<p>From these matrix models, we can estimate the stable population size
-and structure, the population growth rate, and a whole host of other
-individual- or population-level metrics. These models are built from
-demographic data from different populations, time spans, or experimental
-treatments. A common question to ask is how the population growth rate
-varies amongst multiple models for the same species, and how that
-variation depends on the changes in the entries of the matrix (the vital
-rates: survival, growth, and fecundity). In this way, we are decomposing
-the change in population growth rate into the contributions from each of
-the vital rates.</p>
-<p>My work builds on the long-standing approximation method for this
-decomposition, called a Life Table Response Experiment (LTRE), to
-generate an exact version of LTRE, which can take into account not only
-the first-order effects of the vital rates, but also the effects of
-interactions amongst the vital rates. This exact method, which I will
-soon make available as an R package, can be used to more precisely study
-the population dynamics of any species. To demonstrate the utility of
-this tool, I am performing a meta-analysis of matrix population models
-from two publicly available databases to demonstrate the impact of the
-exact method, as well as to investigate patterns in the dependence of
-population dynamics on the vital rates, and how these patterns interact
-with life histories (e.g., the fast-slow continuum).</p>
-</div>
-<div id="maternal-effects-in-rotifers" class="section level1">
-<h1><strong>Maternal effects in rotifers</strong></h1>
-<p>For many species, there is significant variation in individual
-fitness that can be attributed to maternal effects. Early life survival
-is strongly influenced by maternal provisioning (e.g., egg mass),
-particularly for species without post-natal care. Maternal health, body
-condition, and stress can lead to differences in survival or even
-phenotypic changes in the offspring. In rotifers, we observe a decline
-in the survival and fertility of offspring with increasing age of their
-mothers, a phenomenon known as maternal effect senescence. This is
-observed even in clonal populations, with no post-natal care, and no
-evidence of changes in maternal provisioning.</p>
-<p>I have a productive collaboration studying maternal effects in
-rotifers with matrix population models. Using individual life history
-data from a laboratory population of rotifers, I found that maternal
-effect senescence was expressed mostly as decreased fertility, and that
-it can arise through decreasing selection gradients with age. This paper
-is <a href="https://www.pnas.org/content/117/28/16431">available
-open-access.</a></p>
-<p>I have also collaborated on a project investigating how maternal age
-influences lifetime reproductive output and have an ongoing
-collaboration looking at how these observed maternal effects respond to
-caloric restriction treatments.</p>
 </div>
 <div id="larval-dispersal" class="section level1">
 <h1><strong>Larval dispersal</strong></h1>
@@ -524,20 +650,19 @@ some locations that a downward shift as larvae grow (a phenomenon termed
 ontogenetic vertical migration or OVM) can constrain dispersal and help
 larvae get back to shore.</p>
 <div class="float">
-<img
-src="https://www.omao.noaa.gov/sites/default/files/styles/960_wide/public/media/MOCNESS%20Net.jpg?itok=S54NWktG"
+<img src="photos/MOCNESS_sketch.jpeg"
 alt="Sketch of a MOCNESS net system, designed to take depth-stratified plankton samples. The survey data used in this study were collected with a modified MOCNESS." />
 <div class="figcaption">Sketch of a MOCNESS net system, designed to take
 depth-stratified plankton samples. The survey data used in this study
 were collected with a modified MOCNESS.</div>
 </div>
-<p>Using data from two years of monthly surveys across the Straits of
-Florida, I analyzed the vertical distributions of 23 taxa of coral reef
-fish larvae, finding behaviors that fit into several broad categories:
-surface-associated taxa, taxa that exhibit OVM, and messier patterns.
-These messier patterns include broadening depth preference with age, a
-complete lack of depth preference, and a shift towards shallower waters
-with age.</p>
+<p><br> Using data from two years of monthly surveys across the Straits
+of Florida, I analyzed the vertical distributions of 23 taxa of coral
+reef fish larvae, finding behaviors that fit into several broad
+categories: surface-associated taxa, taxa that exhibit OVM, and messier
+patterns. These messier patterns include broadening depth preference
+with age, a complete lack of depth preference, and a shift towards
+shallower waters with age.</p>
 <p>In larval simulations inspired by these vertical patterns, I found
 that a species exhibiting an even distribution across the water column
 experiences similar dispersal as a species exhibiting OVM. Both of these
@@ -546,6 +671,9 @@ less connectivity in general across the Caribbean region. However, these
 patterns were more complex on regional and local scales, where the
 influence of local hydrography and habitat availability helped determine
 the dispersal and connectivity.</p>
+<p>This paper is published at <a
+href="https://link.springer.com/article/10.1007/s00338-023-02355-x">Coral
+Reefs</a>. Please get in touch if you cannot access it.</p>
 </div>
 
 
