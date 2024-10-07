@@ -12,7 +12,7 @@ require(here)
 ```
 ![](photos/headshot_2018.jpeg){width=25%}
 
-## Postdoctoral Research Associate, University of Oxford
+## Marie Curie Postdoctoral Fellow, University of Oxford
 
 I am an ecologist interested in population dynamics and life history evolution. My work covers a variety of topics including population regulation and resilience, the role of reproductive traits and early life history events, and comparative demography.
 
