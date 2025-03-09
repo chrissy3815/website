@@ -7,7 +7,7 @@ navbar:
     - text: "Research"
       href: research.html
     - text: "CV"
-      href: HernandezCV_Oct2024.pdf
+      href: Hernandez_CV_Current.pdf
     - text: "Contact"
       href: contact.html
 output_dir: "."
